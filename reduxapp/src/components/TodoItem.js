@@ -1,12 +1,24 @@
 import React from 'react';
 import "./TodoItem.css";
+import Checkbox from "@material-ui/core/Checkbox";
 
 const TodoItem = ({ name, done, id }) => {
+  
+  const handleCheck = () => {
+
+  }
+  
   return (
     <div className="todoItem">
-        {/* Checked */}
-        {/* name */}
-        <p className={done && 'todoItem--done'}>{name}</p>
+
+      <Checkbox 
+        checked={done}
+        color="primary"
+        onChange={handleCheck}
+        inputProps={{'arial-lable':'secondary checkbox'}} 
+      />
+
+      <p className={done && 'todoItem--done'}>{name}</p>
     </div>
   )
 }
